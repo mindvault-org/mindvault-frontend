@@ -1,56 +1,93 @@
-import Image from "next/image";
-import Link from "next/link";
-
 export default function Hero() {
   return (
-    <section className="bg-white dark:bg-zinc-900">
-      <div className="grid max-w-screen-xl px-4 py-16 mx-auto lg:grid-cols-12 lg:gap-8 xl:gap-0">
-        {/* Text Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white mb-6">
-            Capture, connect and retrieve your thoughts - instantly.
-          </h1>
-          <p className="text-lg md:text-xl font-light text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl">
-            MindVault is your second brain: AI-powered, context-aware, and
-            beautifully simple.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center px-6 py-3 text-white text-base font-medium bg-[#45d8ac] rounded-lg hover:bg-[#3cc39b] focus:ring-4 focus:ring-[#45d8ac]/40 transition"
+    <section className="relative">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        {/* Hero content */}
+        <div className="pb-12 pt-32 md:pb-20 md:pt-40">
+          {/* Section header */}
+          <div className="pb-12 text-center md:pb-16">
+            <h1
+              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"
+              data-aos="zoom-y-out"
+              data-aos-delay={150}
             >
-              Get Started
-              <svg
-                className="w-5 h-5 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+              The website builder you&apos;re <br className="max-lg:hidden" />
+              looking for
+            </h1>
+            <div className="mx-auto max-w-3xl">
+              <p
+                className="mb-8 text-lg text-gray-700"
+                data-aos="zoom-y-out"
+                data-aos-delay={300}
               >
-                <path
-                  fillRule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-zinc-900 border border-zinc-300 rounded-lg hover:bg-zinc-100 dark:text-white dark:border-zinc-700 dark:hover:bg-zinc-800 transition"
-            >
-              Speak to Sales
-            </Link>
+                Simple is a modern website builder powered by AI that changes
+                how companies create user interfaces together.
+              </p>
+              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
+                <div
+                  className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"
+                  data-aos="zoom-y-out"
+                  data-aos-delay={450}
+                >
+                  <a
+                    className="group mb-4 w-full rounded-lg bg-[#D56434] px-6 py-3 text-sm font-medium text-white shadow-md transition hover:bg-[#D56434] sm:mb-0 sm:w-auto"
+                    href="#"
+                  >
+                    <span className="inline-flex items-center">
+                      Start Free Trial
+                      <span className="ml-2 text-white transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </span>
+                  </a>
+                  <a
+                    className="w-full rounded-lg border border-dark px-6 py-3 text-sm font-medium text-dark transition hover:bg-[#00e6e6]/10 sm:ml-4 sm:w-auto"
+                    href="#"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Image */}
-        <div className="hidden lg:flex lg:col-span-5 lg:justify-center">
-          <Image
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-            alt="MindVault app mockup"
-            width={500}
-            height={500}
-            className="w-full h-auto"
-            unoptimized
-          />
+          {/* Hero image */}
+          <div
+            className="mx-auto max-w-3xl"
+            data-aos="zoom-y-out"
+            data-aos-delay={600}
+          >
+            <div className="relative aspect-video rounded-2xl bg-gray-900 px-5 py-3 shadow-xl before:pointer-events-none before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] after:absolute after:-inset-5 after:-z-10 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1]">
+              <div className="relative mb-8 flex items-center justify-between before:block before:h-[9px] before:w-[41px] before:bg-[length:16px_9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] after:w-[41px]">
+                <span className="text-[13px] font-medium text-white">
+                  cruip.com
+                </span>
+              </div>
+              <div className="font-mono text-gray-500 [&_span]:opacity-0">
+                <span className="animate-[code-1_10s_infinite] text-gray-200">
+                  npm login
+                </span>{" "}
+                <span className="animate-[code-2_10s_infinite]">
+                  --registry=https://npm.pkg.github.com
+                </span>
+                <br />
+                <span className="animate-[code-3_10s_infinite]">
+                  --scope=@phanatic
+                </span>{" "}
+                <span className="animate-[code-4_10s_infinite]">
+                  Successfully logged-in.
+                </span>
+                <br />
+                <br />
+                <span className="animate-[code-5_10s_infinite] text-gray-200">
+                  npm publish
+                </span>
+                <br />
+                <span className="animate-[code-6_10s_infinite]">
+                  Package published.
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
