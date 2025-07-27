@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import image from "@/app/favicon.ico";
+import image from "@/app/favicon.png";
 
 export default function Cta() {
   return (

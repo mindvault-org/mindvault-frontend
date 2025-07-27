@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Github, Twitter, Linkedin } from "lucide-react";
 import { FOOTER } from "@/lib/constants";
+import  icon from "@/app/favicon.png";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   return (
@@ -15,7 +16,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
           {/* Logo & copyright */}
           <div className="space-y-2 sm:col-span-12 lg:col-span-4">
             <Image
-              src="/favicon.ico"
+              src={icon}
               alt={FOOTER.copyright.alt}
               width={32}
               height={32}

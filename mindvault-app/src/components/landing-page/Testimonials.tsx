@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Quote } from "lucide-react";
-import TestimonialImg from "@/app/favicon.ico";
+import TestimonialImg from "@/app/favicon.png";
 import { TESTIMONIAL } from "@/lib/constants";
 
 export default function Testimonial() {

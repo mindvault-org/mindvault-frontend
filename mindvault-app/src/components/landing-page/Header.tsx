@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import "@/app/favicon.ico";
+import icon from "@/app/favicon.png";
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
         <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl backdrop-filter backdrop-blur-[20px] px-3 shadow-lg shadow-black/[0.03] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-[#cbd5e1] before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
           {/* Site branding */}
           <div className="flex flex-1 items-center">
-            <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
+            <Image src={icon} alt="Logo" width={32} height={32} />
           </div>
 
           {/* Navigation links */}
