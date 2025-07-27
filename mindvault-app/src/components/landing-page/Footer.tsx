@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Twitter, BookOpenCheck, Newspaper } from "lucide-react";
+import { Github, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   return (
@@ -26,25 +26,25 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* Product */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-white font-medium">Product</h3>
+            <h3 className="text-black font-medium">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Features
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Integrations
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Changelog
                 </Link>
               </li>
@@ -53,25 +53,25 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* Company */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-white font-medium">Company</h3>
+            <h3 className="text-black font-medium">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   About Mindvault
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Privacy & Terms
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Contact
                 </Link>
               </li>
@@ -80,25 +80,25 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* Resources */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-white font-medium">Resources</h3>
+            <h3 className="text-black font-medium">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Support
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   API Docs
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-white transition" href="#">
+                <Link className="hover:text-black transition" href="#">
                   Security
                 </Link>
               </li>
@@ -107,7 +107,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* Socials */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-white font-medium">Follow us</h3>
+            <h3 className="text-black font-medium">Follow us</h3>
             <div className="flex gap-3">
               <Link
                 href="#"
@@ -124,10 +124,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 <Github className="h-6 w-6" />
               </Link>
               <Link href="#" className="hover:text-[#00d5ff]" aria-label="Blog">
-                <Newspaper className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="hover:text-[#45d8ac]" aria-label="Docs">
-                <BookOpenCheck className="h-6 w-6" />
+                <Linkedin className="h-6 w-6" />
               </Link>
             </div>
           </div>
