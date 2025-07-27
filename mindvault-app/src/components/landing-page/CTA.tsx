@@ -7,7 +7,7 @@ export default function Cta() {
     <section className="relative z-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div
-          className="relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gray-800"
+          className="relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gray-950"
           data-aos="zoom-y-out"
         >
           {/* Glow */}
@@ -20,22 +20,25 @@ export default function Cta() {
 
           {/* Background Illustration */}
           <div
-            className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform opacity-20"
+            className="absolute inset-0 -z-10 flex items-center justify-center"
             aria-hidden="true"
           >
-            <Image
-              className="max-w-none"
-              src={image}
-              width={768}
-              height={432}
-              alt="Background pattern"
-            />
+            <div className="relative h-[400px] w-[400px] rounded-full opacity-10">
+              <div className="absolute inset-0 animate-[pulse_6s_ease-in-out_infinite] rounded-full bg-gradient-to-br from-cyan-400 via-purple-600 to-[#D56434] blur-3xl"></div>
+              <Image
+                src={image}
+                alt="Background pattern"
+                width={400}
+                height={400}
+                className="relative z-10 mx-auto rounded-full border border-white/10 bg-gray-900 p-4 shadow-inner"
+              />
+            </div>
           </div>
 
           {/* CTA Content */}
           <div className="px-4 py-12 md:px-12 md:py-20">
-            <h2 className="mb-6 border-y border-white/10 py-4 text-3xl font-bold text-white md:mb-12 md:text-4xl">
-              Ready to build your second brain?
+            <h2 className="mb-6 border-y [border-image:linear-gradient(to_right,transparent,#464646,transparent)1] py-4 text-3xl font-bold text-white md:mb-12 md:text-4xl">
+              Ready to build your second brain ?
             </h2>
 
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
