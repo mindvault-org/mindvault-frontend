@@ -70,3 +70,14 @@ export const FEATURES_LIST: {
     desc: "Pick up where you left off — your knowledge vault syncs across desktop, tablet and mobile.",
   },
 ];
+
+{
+  /* Testimonials Section Content */
+}
+export const TESTIMONIAL = {
+  quote:
+    "“MindVault m'aide à capturer mes idées, à structurer ma pensée, et à revenir facilement sur ce qui compte. ",
+  emphasized: "C'est littéralement mon second cerveau.",
+  author: "Camille Roche",
+  role: "Cognitive Coach",
+};

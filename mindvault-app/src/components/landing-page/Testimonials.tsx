@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Quote } from "lucide-react";
 import TestimonialImg from "@/app/favicon.ico";
+import { TESTIMONIAL } from "@/lib/constants";
 
 export default function Testimonial() {
   return (
@@ -19,17 +20,14 @@ export default function Testimonial() {
               />
             </div>
             <p className="text-2xl font-bold text-gray-900">
-              “MindVault m&apos;aide à capturer mes idées, à structurer ma pensée, et
-              à revenir facilement sur ce qui compte.{" "}
-              <em className="italic text-gray-500">
-                C&apos;est littéralement mon second cerveau
-              </em>
-              .”
+              {TESTIMONIAL.quote}
+              <em className="italic text-gray-500">{TESTIMONIAL.emphasized}</em>
+              ”
             </p>
             <div className="text-sm font-medium text-gray-500">
-              <span className="text-gray-700">Camille Roche</span>{" "}
+              <span className="text-gray-700">{TESTIMONIAL.author}</span>{" "}
               <span className="text-gray-400">/</span>{" "}
-              <span className="text-blue-500">Cognitive Coach</span>
+              <span className="text-blue-500">{TESTIMONIAL.role}</span>
             </div>
           </div>
         </div>
