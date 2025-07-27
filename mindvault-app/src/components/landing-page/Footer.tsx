@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Github, Twitter, Linkedin } from "lucide-react";
+import { FOOTER } from "@/lib/constants";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   return (
@@ -15,115 +16,52 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <div className="space-y-2 sm:col-span-12 lg:col-span-4">
             <Image
               src="/favicon.ico"
-              alt="Mindvault Logo"
+              alt={FOOTER.copyright.alt}
               width={32}
               height={32}
             />
-            <div>
-              &copy; {new Date().getFullYear()} Mindvault - All rights reserved.
-            </div>
+            <div>{FOOTER.copyright.text}</div>
           </div>
 
           {/* Product */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-black font-medium">Product</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Integrations
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Changelog
-                </Link>
-              </li>
-            </ul>
-          </div>
-
+          <FooterSection
+            title={FOOTER.product.title}
+            links={FOOTER.product.links}
+          />
           {/* Company */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-black font-medium">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  About Mindvault
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Privacy & Terms
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
+          <FooterSection
+            title={FOOTER.company.title}
+            links={FOOTER.company.links}
+          />
           {/* Resources */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-black font-medium">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Support
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  API Docs
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-black transition" href="#">
-                  Security
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <FooterSection
+            title={FOOTER.resources.title}
+            links={FOOTER.resources.links}
+          />
 
           {/* Socials */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-black font-medium">Follow us</h3>
+            <h3 className="text-black font-medium">{FOOTER.social.title}</h3>
             <div className="flex gap-3">
               <Link
                 href="#"
                 className="hover:text-[#D56434]"
-                aria-label="Twitter"
+                aria-label={FOOTER.social.twitterLabel}
               >
                 <Twitter className="h-6 w-6" />
               </Link>
               <Link
                 href="#"
                 className="hover:text-[#6D66E7]"
-                aria-label="GitHub"
+                aria-label={FOOTER.social.githubLabel}
               >
                 <Github className="h-6 w-6" />
               </Link>
-              <Link href="#" className="hover:text-[#00d5ff]" aria-label="Blog">
+              <Link
+                href="#"
+                className="hover:text-[#00d5ff]"
+                aria-label={FOOTER.social.linkedinLabel}
+              >
                 <Linkedin className="h-6 w-6" />
               </Link>
             </div>
@@ -141,5 +79,22 @@ export default function Footer({ border = false }: { border?: boolean }) {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterSection({ title, links }: { title: string; links: string[] }) {
+  return (
+    <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+      <h3 className="text-black font-medium">{title}</h3>
+      <ul className="space-y-2">
+        {links.map((label) => (
+          <li key={label}>
+            <Link className="hover:text-black transition" href="#">
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

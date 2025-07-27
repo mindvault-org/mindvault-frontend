@@ -81,3 +81,31 @@ export const TESTIMONIAL = {
   author: "Camille Roche",
   role: "Cognitive Coach",
 };
+
+{
+  /* Footer Content */
+}
+export const FOOTER = {
+  product: {
+    title: "Product",
+    links: ["Features", "Integrations", "Pricing", "Changelog"],
+  },
+  company: {
+    title: "Company",
+    links: ["About Mindvault", "Careers", "Privacy & Terms", "Contact"],
+  },
+  resources: {
+    title: "Resources",
+    links: ["Blog", "Support", "API Docs", "Security"],
+  },
+  social: {
+    title: "Follow us",
+    twitterLabel: "Twitter",
+    githubLabel: "GitHub",
+    linkedinLabel: "LinkedIn",
+  },
+  copyright: {
+    alt: "Mindvault Logo",
+    text: `© ${new Date().getFullYear()} Mindvault - All rights reserved.`,
+  },
+};
