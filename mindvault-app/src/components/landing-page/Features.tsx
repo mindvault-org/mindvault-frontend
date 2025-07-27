@@ -1,13 +1,7 @@
 import Image from "next/image";
-import {
-  BrainCog,
-  Search,
-  CalendarDays,
-  Sparkles,
-  FileText,
-  RefreshCcw,
-} from "lucide-react";
 import PlanetImg from "@/app/favicon.ico";
+import { FEATURES_HEADER, FEATURES_LIST } from "@/lib/constants";
+import { LucideIcon } from "lucide-react";
 
 export default function Features() {
   return (
@@ -17,7 +11,7 @@ export default function Features() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-16 text-center md:pb-20">
             <h2 className="text-3xl font-bold text-white md:text-4xl">
-              Built for clarity, designed for thinkers
+              {FEATURES_HEADER.title}
             </h2>
           </div>
 
@@ -38,50 +32,15 @@ export default function Features() {
 
           {/* Feature Grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 text-gray-300 md:*:p-10 *:relative *:p-6 *:rounded-2xl *:bg-gray-900/30 *:backdrop-blur-md *:border *:border-white/10">
-            <FeatureItem
-              icon={BrainCog}
-              color="#D56434"
-              title="Linked Thoughts"
-              desc="Connect notes together like a mind map — discover patterns and connections you didn’t even know were there."
-            />
-            <FeatureItem
-              icon={Search}
-              color="#6D66E7"
-              title="Fast Search"
-              desc="Search through your entire vault instantly. Everything is indexed, even inside nested pages."
-            />
-            <FeatureItem
-              icon={CalendarDays}
-              color="#00CFC5"
-              title="Daily Notes"
-              desc="Capture fleeting thoughts, journaling, or planning — a fresh canvas every day to stay focused."
-            />
-            <FeatureItem
-              icon={Sparkles}
-              color="#D56434"
-              title="AI Summaries"
-              desc="Summarize long notes into key takeaways with one click. Perfect for review or sharing."
-            />
-            <FeatureItem
-              icon={FileText}
-              color="#6D66E7"
-              title="Markdown & Rich Text"
-              desc="Write how you want — whether plain Markdown or rich formatting with tags, checklists and embeds."
-            />
-            <FeatureItem
-              icon={RefreshCcw}
-              color="#00CFC5"
-              title="Cross-Platform Sync"
-              desc="Pick up where you left off — your knowledge vault syncs across desktop, tablet and mobile."
-            />
+            {FEATURES_LIST.map((feature, idx) => (
+              <FeatureItem key={idx} {...feature} />
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
-import { LucideIcon } from "lucide-react";
 
 function FeatureItem({
   icon: Icon,
