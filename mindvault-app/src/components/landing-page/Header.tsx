@@ -25,7 +25,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signup"
-                className="text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all px-3 py-[5px] bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
+                className="text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all px-3 py-[5px] bg-[#D56434] text-gray-200 shadow-sm hover:bg-gray-900"
               >
                 Register
               </Link>
