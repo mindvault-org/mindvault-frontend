@@ -8,14 +8,9 @@ import Footer from "@/app/components/landing-page/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full">
+    <>
       <Header />
       <Hero />
-      <Features />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </main>
+    </>
   );
 }
