@@ -2,7 +2,6 @@ import Header from "@/components/landing-page/Header";
 import Hero from "@/components/landing-page/Hero";
 import Features from "@/components/landing-page/Features";
 import Testimonials from "@/components/landing-page/Testimonials";
-import FAQ from "@/components/landing-page/FAQ";
 import CTA from "@/components/landing-page/CTA";
 import Footer from "@/components/landing-page/Footer";
 
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <Features />
       <Testimonials />
-      <FAQ />
       <CTA />
       <Footer />
     </div>
