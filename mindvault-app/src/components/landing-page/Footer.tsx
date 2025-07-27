@@ -20,6 +20,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               alt={FOOTER.copyright.alt}
               width={32}
               height={32}
+              style={{ borderRadius: "0.5rem" }}
             />
             <div>{FOOTER.copyright.text}</div>
           </div>
