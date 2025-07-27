@@ -1,29 +1,37 @@
 import Link from "next/link";
-import { navItems } from "@/lib/constants";
+import Image from "next/image";
+import "@/app/favicon.ico";
 
-export default function NavigationMenu() {
+export default function Header() {
   return (
-    <header className="p-6 sm:p-10 flex justify-center">
-      <div
-        className="fixed flex items-center 
-      bg-white/80 text-zinc-900 
-      dark:bg-zinc-900/80 dark:text-white
-      rounded-full px-2 py-1 shadow-lg shadow-zinc-400/30 dark:shadow-black/30 backdrop-blur-sm 
-      border border-zinc-300 dark:border-white/10 
-      transition-colors duration-300 z-50"
-      >
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-full 
-            hover:bg-[#45d8ac]/10 hover:text-[#45d8ac] 
-            transition-colors text-sm font-medium"
-          >
-            {item.icon}
-            {item.label}
-          </Link>
-        ))}
+    <header className="fixed top-2 z-30 w-full md:top-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+          {/* Site branding */}
+          <div className="flex flex-1 items-center">
+            <Image src="/favicon.ico" alt="Logo" width={32} height={32} />
+          </div>
+
+          {/* Navigation links */}
+          <ul className="flex flex-1 items-center justify-end gap-3">
+            <li>
+              <Link
+                href="/signin"
+                className="text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all px-3 py-[5px] bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+              >
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/signup"
+                className="text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all px-3 py-[5px] bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
+              >
+                Register
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );
