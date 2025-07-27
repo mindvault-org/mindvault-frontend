@@ -7,12 +7,12 @@ export default function Hero() {
           {/* Section header */}
           <div className="pb-12 text-center md:pb-16">
             <h1
-              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"
+              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,#cbd5e1,transparent)1] md:text-6xl"
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              The website builder you&apos;re <br className="max-lg:hidden" />
-              looking for
+              Your ideas, <br className="max-lg:hidden" />
+              connected and organized
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -20,72 +20,35 @@ export default function Hero() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Simple is a modern website builder powered by AI that changes
-                how companies create user interfaces together.
+                Mindvault is your intelligent knowledge base - capture, link,
+                and resurface insights effortlessly. Built for thinkers,
+                creators, and lifelong learners.
               </p>
-              <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
-                <div
-                  className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"
-                  data-aos="zoom-y-out"
-                  data-aos-delay={450}
-                >
-                  <a
-                    className="group mb-4 w-full rounded-lg bg-[#D56434] px-6 py-3 text-sm font-medium text-white shadow-md transition hover:bg-[#D56434] sm:mb-0 sm:w-auto"
-                    href="#"
-                  >
-                    <span className="inline-flex items-center">
-                      Start Free Trial
-                      <span className="ml-2 text-white transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </span>
-                  </a>
-                  <a
-                    className="w-full rounded-lg border border-dark px-6 py-3 text-sm font-medium text-dark transition hover:bg-[#00e6e6]/10 sm:ml-4 sm:w-auto"
-                    href="#"
-                  >
-                    Learn More
-                  </a>
-                </div>
+
+              {/* Call to action */}
+              <div
+                className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+                data-aos="zoom-y-out"
+                data-aos-delay={450}
+              >
+                <button className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#D56434] px-6 py-3 text-sm font-medium text-white shadow-md transition-colors duration-150 hover:bg-[#c4572b]">
+                  Try Mindvault Free
+                </button>
+                <button className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-gray-800 px-6 py-3 text-sm font-medium text-gray-800 transition-colors duration-150 hover:bg-gray-100">
+                  Learn More
+                </button>
               </div>
             </div>
           </div>
-          {/* Hero image */}
+
+          {/* Hero image placeholder */}
           <div
             className="mx-auto max-w-3xl"
             data-aos="zoom-y-out"
             data-aos-delay={600}
           >
-            <div className="relative aspect-video rounded-2xl bg-gray-900 px-5 py-3 shadow-xl before:pointer-events-none before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] after:absolute after:-inset-5 after:-z-10 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1]">
-              <div className="relative mb-8 flex items-center justify-between before:block before:h-[9px] before:w-[41px] before:bg-[length:16px_9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] after:w-[41px]">
-                <span className="text-[13px] font-medium text-white">
-                  cruip.com
-                </span>
-              </div>
-              <div className="font-mono text-gray-500 [&_span]:opacity-0">
-                <span className="animate-[code-1_10s_infinite] text-gray-200">
-                  npm login
-                </span>{" "}
-                <span className="animate-[code-2_10s_infinite]">
-                  --registry=https://npm.pkg.github.com
-                </span>
-                <br />
-                <span className="animate-[code-3_10s_infinite]">
-                  --scope=@phanatic
-                </span>{" "}
-                <span className="animate-[code-4_10s_infinite]">
-                  Successfully logged-in.
-                </span>
-                <br />
-                <br />
-                <span className="animate-[code-5_10s_infinite] text-gray-200">
-                  npm publish
-                </span>
-                <br />
-                <span className="animate-[code-6_10s_infinite]">
-                  Package published.
-                </span>
-              </div>
+            <div className="aspect-video rounded-2xl bg-gray-100 shadow-xl flex items-center justify-center text-gray-400 text-lg font-mono">
+              [ Product image here ]
             </div>
           </div>
         </div>
