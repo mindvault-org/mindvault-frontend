@@ -31,7 +31,7 @@ export default function Hero() {
                 data-aos="zoom-y-out"
                 data-aos-delay={450}
               >
-                <button className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-[#D56434] px-6 py-3 text-sm font-medium text-white shadow-md transition-colors duration-150 hover:bg-[#c4572b]">
+                <button className="group cursor-pointer inline-flex items-center justify-center rounded-lg bg-gradient-to-tr from-[#D56434] to-[#6D66E7] px-6 py-3 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105 sm:w-auto">
                   Try Mindvault Free
                 </button>
                 <button className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-gray-800 px-6 py-3 text-sm font-medium text-gray-800 transition-colors duration-150 hover:bg-gray-100">
