@@ -78,7 +78,7 @@ export const TESTIMONIAL = {
   quote:
     "“MindVault m'aide à capturer mes idées, à structurer ma pensée, et à revenir facilement sur ce qui compte. ",
   emphasized: "C'est littéralement mon second cerveau.",
-  author: "Camille Roche",
+  author: "Pierre Roche",
   role: "Cognitive Coach",
 };
 
