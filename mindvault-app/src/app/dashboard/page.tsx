@@ -1,7 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+
+import Sidebar from "@/components/dashboard/Sidebar";
+import EditorHeader from "@/components/dashboard/EditorHeader";
+import EditorArea from "@/components/dashboard/EditorArea";
+
+type Note = {
+  id: number;
+  title: string;
+  content: string;
+};
+
+const initialNotes: Note[] = [
+  {
+    id: 1,
+    title: "Welcome note",
+    content: "# Welcome!\nStart editing or create a new note.",
+  },
+];
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -13,9 +31,74 @@ export default function DashboardPage() {
     }
   }, [router]);
 
+  const [notes, setNotes] = useState<Note[]>(initialNotes);
+  const [selectedNoteId, setSelectedNoteId] = useState<number | null>(null);
+  const [tab, setTab] = useState<"edit" | "preview">("edit");
+
+  const selectedNote = notes.find((n) => n.id === selectedNoteId);
+
+  const handleCreateNote = () => {
+    const newNote: Note = {
+      id: Date.now(),
+      title: `New Note ${notes.length + 1}`,
+      content: "",
+    };
+    setNotes([newNote, ...notes]);
+    setSelectedNoteId(newNote.id);
+    setTab("edit");
+  };
+
+  const handleSelectNote = (id: number) => {
+    setSelectedNoteId(id);
+    setTab("edit");
+  };
+
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const updatedContent = e.target.value;
+    setNotes((prev) =>
+      prev.map((note) =>
+        note.id === selectedNoteId ? { ...note, content: updatedContent } : note
+      )
+    );
+  };
+
   return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-3xl font-bold">Welcome to your Dashboard</h1>
+    <div className="flex h-screen bg-gray-50 text-gray-900">
+      <Sidebar
+        notes={notes}
+        selectedNoteId={selectedNoteId}
+        onSelectNote={handleSelectNote}
+        onCreateNote={handleCreateNote}
+      />
+
+      <main className="flex-1 flex flex-col">
+        {!selectedNote ? (
+          <div className="flex flex-col items-center justify-center flex-1 px-6">
+            <h2 className="text-3xl font-semibold mb-4">
+              Open a note or create one
+            </h2>
+            <button
+              onClick={handleCreateNote}
+              className="rounded bg-indigo-600 text-white px-6 py-3 hover:bg-indigo-700 transition"
+            >
+              + Create a new note
+            </button>
+          </div>
+        ) : (
+          <>
+            <EditorHeader
+              title={selectedNote.title}
+              tab={tab}
+              setTab={setTab}
+            />
+            <EditorArea
+              tab={tab}
+              content={selectedNote.content}
+              onChange={handleContentChange}
+            />
+          </>
+        )}
+      </main>
     </div>
   );
 }
