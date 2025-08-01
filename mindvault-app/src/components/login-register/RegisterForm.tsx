@@ -1,29 +1,77 @@
-export default function RegisterForm() {
+"use client";
+
+import { useState } from "react";
+
+export default function RegisterForm({
+  onSubmit,
+}: {
+  onSubmit: (formData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+  }) => void;
+}) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
   return (
-    <form className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <input
+        name="firstName"
         type="text"
-        placeholder="Prénom"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="First Name"
+        value={formData.firstName}
+        onChange={handleChange}
+        className="w-full border rounded px-3 py-2"
+        required
       />
       <input
+        name="lastName"
         type="text"
-        placeholder="Nom"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="Last Name"
+        value={formData.lastName}
+        onChange={handleChange}
+        className="w-full border rounded px-3 py-2"
+        required
       />
       <input
+        name="email"
         type="email"
-        placeholder="Adresse e-mail"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+        className="w-full border rounded px-3 py-2"
+        required
       />
       <input
+        name="password"
         type="password"
-        placeholder="Mot de passe"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleChange}
+        className="w-full border rounded px-3 py-2"
+        required
       />
       <button
         type="submit"
-        className="w-full bg-gradient-to-tr from-[#D56434] to-[#6D66E7] text-white py-2 rounded-lg font-medium hover:opacity-90 transition-all"
+        className="w-full bg-gradient-to-tr from-[#D56434] to-[#6D66E7] text-white py-2 rounded hover:opacity-90 transition cursor-pointer"
       >
         Register
       </button>
