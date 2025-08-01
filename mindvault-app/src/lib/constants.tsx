@@ -109,3 +109,10 @@ export const FOOTER = {
     text: `© ${new Date().getFullYear()} Mindvault - All rights reserved.`,
   },
 };
+
+{ /*Dashboard Page Content */ }
+export const mockNotes = [
+  { id: 1, title: "Note 1", content: "# Hello from note 1\nSome **markdown** content." },
+  { id: 2, title: "Note 2", content: "## Note 2 content\n- List item 1\n- List item 2" },
+  { id: 3, title: "Note 3", content: "Simple text for note 3." },
+];
