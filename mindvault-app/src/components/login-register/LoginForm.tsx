@@ -1,19 +1,41 @@
-export default function LoginForm() {
+"use client";
+
+import { useState } from "react";
+
+export default function LoginForm({
+  onSubmit,
+}: {
+  onSubmit: (credentials: { email: string; password: string }) => void;
+}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit({ email, password });
+  };
+
   return (
-    <form className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <input
         type="email"
-        placeholder="Adresse e-mail"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="Email"
+        className="w-full border rounded px-3 py-2"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
       />
       <input
         type="password"
         placeholder="Mot de passe"
-        className="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        className="w-full border rounded px-3 py-2"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
       />
       <button
         type="submit"
-        className="w-full bg-gradient-to-tr from-[#D56434] to-[#6D66E7] text-white py-2 rounded-lg font-medium hover:opacity-90 transition-all"
+        className="w-full bg-gradient-to-tr from-[#D56434] to-[#6D66E7] text-white py-2 rounded hover:opacity-90 transition cursor-pointer"
       >
         Login
       </button>
