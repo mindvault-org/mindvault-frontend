@@ -7,7 +7,7 @@ export const HERO_CONTENT = {
     "Mindvault is your intelligent knowledge base - capture, link, and resurface insights effortlessly. Built for thinkers, creators, and lifelong learners.",
   primaryCta: "Try Mindvault Free",
   secondaryCta: "Learn More",
-  placeholder: "[ Product image here ]",
+  placeholder: "Demo App",
 };
 
 {

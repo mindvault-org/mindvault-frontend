@@ -1,4 +1,5 @@
 import { HERO_CONTENT } from "@/lib/constants";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -48,8 +49,21 @@ export default function Hero() {
             data-aos="zoom-y-out"
             data-aos-delay={600}
           >
-            <div className="aspect-video rounded-2xl bg-gray-100 shadow-xl flex items-center justify-center text-gray-400 text-lg font-mono">
-              {HERO_CONTENT.placeholder}
+            <div
+              className="mx-auto max-w-4xl"
+              data-aos="zoom-y-out"
+              data-aos-delay={600}
+            >
+              <div className="overflow-hidden rounded-2xl shadow-xl">
+                <Image
+                  src="/demo_app.png"
+                  alt="Hero illustration"
+                  width={1280}
+                  height={720}
+                  className="w-full h-auto object-cover rounded-2xl"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
