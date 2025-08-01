@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { PlusIcon } from "lucide-react";
 
 import Sidebar from "@/components/dashboard/Sidebar";
 import EditorHeader from "@/components/dashboard/EditorHeader";
@@ -79,9 +80,10 @@ export default function DashboardPage() {
             </h2>
             <button
               onClick={handleCreateNote}
-              className="rounded bg-green-600 text-white px-6 py-3 hover:bg-green-700 transition cursor-pointer"
+              className="rounded bg-green-600 text-white px-6 py-3 hover:bg-green-700 transition cursor-pointer flex items-center"
             >
-              + Create a new note
+              <PlusIcon className="mr-2 w-5" />
+              Create a new note
             </button>
           </div>
         ) : (
