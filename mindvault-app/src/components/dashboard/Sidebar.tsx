@@ -37,8 +37,10 @@ export default function Sidebar({
   const [openNotes, setOpenNotes] = useState(true);
 
   const logout = async () => {
-    const token = localStorage.getItem("token");
     try {
+      const token = localStorage.getItem("token");
+      if (!token) throw new Error("No token found");
+
       const response = await fetch("http://localhost:8080/api/auth/logout", {
         method: "POST",
         headers: {
@@ -46,12 +48,17 @@ export default function Sidebar({
           "Content-Type": "application/json",
         },
       });
-      if (!response.ok) throw new Error("Logout failed");
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Logout failed: ${error}`);
+      }
+
       localStorage.clear();
       window.location.href = "/login-register?mode=login";
-    } catch (error) {
-      alert("Logout error");
-      console.error(error);
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred during logout.");
     }
   };
 
